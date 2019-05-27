@@ -15,6 +15,20 @@ ActiveRecord::Schema.define(version: 2019_05_27_152106) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "gardens", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "address"
+    t.string "city"
+    t.integer "postal_code"
+    t.string "country"
+    t.integer "square_meters"
+    t.integer "price"
+    t.string "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
