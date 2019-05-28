@@ -5,3 +5,26 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+10.times do
+  new_user = User.new(
+    email: Faker::Internet.email,
+    password: "123456",
+    )
+  new_user.save
+end
+
+
+50.times do
+  Garden.create!(
+    title: Faker::Lorem.words(5).join,
+    description: Faker::Lorem.paragraphs(1).join,
+    address: Faker::Address.street_address,
+    city: Faker::Address.city,
+    country: "USA",
+    postal_code: Faker::Address.zip_code,
+    square_meters: rand(25..100),
+    price: rand(5..50),
+    user_id: rand(1..5)
+    )
+end
