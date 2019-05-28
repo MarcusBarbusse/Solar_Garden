@@ -7,6 +7,10 @@ class GardensController < ApplicationController
     garden = Garden.new
   end
 
+  def show
+    @garden = Garden.find(params[:id])
+  end
+
   def create
     @garden = garden.new(garden_params)
     if @garden.save
