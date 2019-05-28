@@ -1,0 +1,7 @@
+<% @gardens.each do |garden| %>
+	<h1><%= garden.title %></h1>
+	<p><%= garden.square_meters %></p>
+	<p><%= garden.description %></p>
+	<%= garden.postal_code  %>
+	<%= link_to "remove garden", garden_path(garden), method: :delete%>
+<% end %>
