@@ -11,8 +11,6 @@ class GardensController < ApplicationController
     @garden = Garden.find(params[:id])
   end
 
-
-
   def create
     @garden = Garden.new(garden_params)
     if @garden.save
