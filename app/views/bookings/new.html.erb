@@ -1,0 +1,5 @@
+<%= simple_form_for [@garden, @booking] do |f| %>
+  <%= f.input_field :start_date, :order => [:month, :day, :year] %>
+  <%= f.input :end_date, :order => [:month, :day, :year] %>
+  <%= f.submit "book" %>
+<% end %>
