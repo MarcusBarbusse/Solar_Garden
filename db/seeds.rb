@@ -16,8 +16,8 @@ end
 
 
 50.times do
-  Garden.create(
-    title: Faker::Lorem.words(rand(5)).join,
+  Garden.create!(
+    title: Faker::Lorem.words(5).join,
     description: Faker::Lorem.paragraphs(1).join,
     address: Faker::Address.street_address,
     city: Faker::Address.city,
