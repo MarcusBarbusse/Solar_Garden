@@ -1,18 +1,20 @@
 class GardensController < ApplicationController
   def index
-    gardens = Garden.all
+    @gardens = Garden.all
   end
 
   def new
-    garden = Garden.new
+    @garden = Garden.new
   end
 
   def show
     @garden = Garden.find(params[:id])
   end
 
+
+
   def create
-    @garden = garden.new(garden_params)
+    @garden = Garden.new(garden_params)
     if @garden.save
       redirect_to gardens_path
     else

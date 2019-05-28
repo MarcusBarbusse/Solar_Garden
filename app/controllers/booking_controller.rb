@@ -18,7 +18,7 @@ class BookingController < ApplicationController
 
   def destroy
     @booking = Booking.find(params[:id])
-    @garden_id = @dose.cocktail_id
+    @garden_id = @booking.garden_id
     @booking.destroy
     redirect_to garden_path(@garden_id)
   end
