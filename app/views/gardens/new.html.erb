@@ -1,9 +1,12 @@
-<% form_for @booking do |f| %>
-  <p>
-    date Range<br />
-    <%= f.text_field :start_date %> -
-    <%= f.text_field :end_date %>
-  </p>
-  <p><%= f.submit "Submit" %></p>
-<% end %>
+    <%= simple_form_for @garden do |f| %>
+    <%= f.input : :price %>
+    <%= f.input : :square_meters %>
+    <%= f.input : :description %>
+    <%= f.input : :address %>
+    <%= f.input : :title %>
+    <%= f.input : :city %>
+    <%= f.input : :postal_code %>
+    <%= f.input : :country %>
 
+    <%= f.button :submit, class: 'btn btn-warning' %>
+    <% end %>
