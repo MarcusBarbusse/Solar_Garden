@@ -1,1 +1,9 @@
-new.html.erb
+<% form_for @booking do |f| %>
+  <p>
+    date Range<br />
+    <%= f.text_field :start_date %> -
+    <%= f.text_field :end_date %>
+  </p>
+  <p><%= f.submit "Submit" %></p>
+<% end %>
+
