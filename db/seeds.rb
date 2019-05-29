@@ -19,10 +19,7 @@ end
   Garden.create!(
     title: Faker::Lorem.words(5).join,
     description: Faker::Lorem.paragraphs(1).join,
-    address: Faker::Address.street_address,
-    city: Faker::Address.city,
-    country: "USA",
-    postal_code: Faker::Address.zip_code,
+    address: Faker::Address.full_address,
     square_meters: rand(25..100),
     price: rand(5..50),
     user_id: rand(1..5)
