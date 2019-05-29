@@ -2,6 +2,8 @@
 	<h1><%= garden.title %></h1>
 	<p><%= garden.square_meters %></p>
 	<p><%= garden.description %></p>
-	<%= garden.postal_code  %>
 	<%= link_to "remove garden", garden_path(garden), method: :delete%>
+    <% if policy(garden).edit? %>
+  		<%= link_to "edit garden", edit_garden_path(garden) %>
+	<% end %>
 <% end %>
