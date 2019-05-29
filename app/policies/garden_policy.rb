@@ -4,9 +4,6 @@ class GardenPolicy < ApplicationPolicy
       scope.all
     end
   end
-  def index?
-    true
-  end
 
   def create?
     true
@@ -15,7 +12,7 @@ class GardenPolicy < ApplicationPolicy
   def show?
     true
   end
-
+  
   def update?
     is_owner_or_admin?
   end

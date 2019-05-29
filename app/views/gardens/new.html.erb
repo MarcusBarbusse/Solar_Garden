@@ -1,12 +1,9 @@
-    <%= simple_form_for @garden do |f| %>
-    <%= f.input : :price %>
-    <%= f.input : :square_meters %>
-    <%= f.input : :description %>
-    <%= f.input : :address %>
-    <%= f.input : :title %>
-    <%= f.input : :city %>
-    <%= f.input : :postal_code %>
-    <%= f.input : :country %>
+   <%= simple_form_for @garden do |f| %>
+   <%= f.input :title %>
+   <%= f.input :description %>
+   <%= f.input :address %>
+   <%= f.input :price %>
+   <%= f.input :square_meters %>
 
-    <%= f.button :submit, class: 'btn btn-warning' %>
-    <% end %>
+   <%= f.button :submit, class: 'btn btn-warning' %>
+   <% end %>
