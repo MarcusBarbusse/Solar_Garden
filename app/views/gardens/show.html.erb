@@ -1,13 +1,17 @@
 <h1><%= @garden.title %></h1>
 
-<%= @garden.description %>
-<br>
-<%= @garden.square_meters %>
-<br>
-<%= @garden.price %>
-<br>
-<%= @garden.address  %>
-<br>
+  <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=968&q=80" id="showimage">
+  <h5><%= @garden.description %></h5>
+<div class="address">
+  <p>Address: <%= @garden.address  %></p>
+  <p>Square meters: <%= @garden.square_meters %></p>
+  <p>Price: <%= @garden.price %> €</p>
 
-<%= link_to "all gardens", root_path %>
+
+<button class="btn-flat">
 <%= link_to "Book now", new_garden_booking_path(@garden)  %>
+</button>
+<button class="btn-flat">
+<%= link_to "all gardens", root_path %>
+</button>
+

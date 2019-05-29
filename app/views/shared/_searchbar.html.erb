@@ -3,8 +3,8 @@
     <div class="inputs">
     <input class="form-control string required" type="text" name="place" id="search_query" placeholder="Where?" />
     <input class="form-control string required" type="text" name="duration" id="search_query" placeholder="How many square meters?" />
-    <button name="button" type="submit" class="btn btn-flat">
-      <i class="fas fa-search"></i> Find a garden
+    <button class='button'>
+      <%= link_to 'Search', gardens_path  %>
     </button>
   </div>
   </div>
