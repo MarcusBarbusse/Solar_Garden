@@ -22,15 +22,19 @@
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
-.btn-flat {
-  color: white;
+.button {
   padding: 8px 24px;
   border-radius: 4px;
   background: #CCB881;
   transition: background 0.3s ease;
 }
 
-.btn-flat:hover {
+.button a {
+  color: white;
+  text-decoration: none;
+}
+
+.button:hover {
   opacity: 0.8;
   color: white;
 }
