@@ -6,6 +6,8 @@ class BookingsController < ApplicationController
   def new
     @garden = Garden.find(params[:garden_id])
     @booking = Booking.new
+    authorize @garden
+    authorize @booking
   end
 
   def create
@@ -23,10 +25,11 @@ class BookingsController < ApplicationController
     @garden = Garden.find(params[:garden_id])
     @booking = Booking.new(start_date: @start_date, end_date: @end_date)
     @booking.garden = @garden
-    @booking.user = User.find(7)
+    @booking.user = current_user
+
+    authorize @booking
 
     if @booking.save
-
       redirect_to root_path
     else
       render :new
