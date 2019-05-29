@@ -1,5 +1,5 @@
-<%= @garden.title %>
-<br>
+<h1><%= @garden.title %></h1>
+
 <%= @garden.description %>
 <br>
 <%= @garden.square_meters %>
@@ -8,11 +8,5 @@
 <br>
 <%= @garden.address  %>
 <br>
-<%= @garden.city  %>
-<br>
-<%= @garden.postal_code %>
-<br>
-<%= @garden.country %>
 
-
-
+<%= link_to "all gardens", root_path %>
