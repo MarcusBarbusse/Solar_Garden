@@ -1,2 +1,13 @@
 <h1><%= @garden.title %></h1>
+
+<%= @garden.description %>
+<br>
+<%= @garden.square_meters %>
+<br>
+<%= @garden.price %>
+<br>
+<%= @garden.address  %>
+<br>
+
 <%= link_to "all gardens", root_path %>
+<%= link_to "Book now", new_garden_booking_path(@garden)  %>
