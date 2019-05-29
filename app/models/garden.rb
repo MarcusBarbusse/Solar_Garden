@@ -7,46 +7,41 @@ class Garden < ApplicationRecord
   validates :description, presence: true
   validates :address, presence: true
   validates :title, presence: true, uniqueness: true
-  validates :city, presence: true
-  validates :postal_code, presence: true
-  validates :country, presence: true
+  #   def gardens
+  #     @gardens ||= find_gardens
+  #   end
 
-#   def gardens
-#     @gardens ||= find_gardens
-#   end
+  #   private
 
-#   private
+  #   def find_gardens
+  #     Garden.find(:all, :conditions => conditions)
+  #   end
 
-#   def find_gardens
-#     Garden.find(:all, :conditions => conditions)
-#   end
+  #   def keyword_conditions
+  #     ["garden.city LIKE ?", "%#{keywords}"] unless keywords.blank?
+  #   end
 
-#   def keyword_conditions
-#     ["garden.city LIKE ?", "%#{keywords}"] unless keywords.blank?
-#   end
+  #   def minimum_size_conditions
+  #     ["gardens.square_meters >= ?", minimum_size] unless minimum_size.blank?
+  #   end
 
-#   def minimum_size_conditions
-#     ["gardens.square_meters >= ?", minimum_size] unless minimum_size.blank?
-#   end
+  # def maximum_size_conditions
+  #   ["gardens.square_meters <= ?", maximum_size] unless maximum_size.blank?
+  # end
 
-# def maximum_size_conditions
-#   ["gardens.square_meters <= ?", maximum_size] unless maximum_size.blank?
-# end
+  # def conditions
+  #   [conditions_clauses.join(' AND '), *conditions_options]
+  # end
 
-# def conditions
-#   [conditions_clauses.join(' AND '), *conditions_options]
-# end
+  # def conditions_clauses
+  #   conditions_parts.map { |condition| condition.first }
+  # end
 
-# def conditions_clauses
-#   conditions_parts.map { |condition| condition.first }
-# end
+  # def conditions_options
+  #   conditions_parts.map { |condition| condition[1..-1] }.flatten
+  # end
 
-# def conditions_options
-#   conditions_parts.map { |condition| condition[1..-1] }.flatten
-# end
-
-# def conditions_parts
-#   private_methods(false).grep(/_conditions$/).map { |m| send(m) }.compact
-# end
-
- end
+  # def conditions_parts
+  #   private_methods(false).grep(/_conditions$/).map { |m| send(m) }.compact
+  # end
+end
