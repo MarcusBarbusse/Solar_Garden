@@ -1,5 +1,6 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "new"
 
 .card-trip {
   overflow: hidden;
@@ -82,3 +83,4 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+

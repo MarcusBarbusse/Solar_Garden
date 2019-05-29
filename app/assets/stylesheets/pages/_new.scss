@@ -1,0 +1,31 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;	
+	width: 450px;
+}
+
+.bouton {
+	text-align: center;
+	// width: 80px;
+	background-color: #CCB881;
+	margin: 10px auto;
+	border-radius: 4px;
+	padding: 10px;
+}
+
+.bouton a {
+	text-decoration: none;
+	color: black;
+}
+.bouton:hover {
+	box-shadow: 2px 2px rgb(100, 100,100);
+}
+
+.dates {
+	padding-top: 20px;
+}
+
+#price {
+	padding-top: 15px;
+}

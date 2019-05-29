@@ -1,5 +1,6 @@
 class GardensController < ApplicationController
   before_action :find_garden, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: :index
 
   def index
     @gardens = policy_scope(Garden)
@@ -24,7 +25,7 @@ class GardensController < ApplicationController
     end
   end
 
- def edit
+def edit
   
  end
 
