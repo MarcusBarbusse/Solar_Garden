@@ -1,11 +1,20 @@
-<%= simple_form_for [@garden, @booking] do |f| %>
-  <div id="dates">
-  <%= f.input_field :start_date, :order => [:day, :month, :year] %>
-  <br>
-  <%= f.input_field :end_date, :order => [:day, :month, :year] %>
-  </div>
-  <div id="price">
-    <%= @garden.price %>
-  </div>
-  <%= f.submit "book" %>
-<% end %>
+<div class="container">
+	<h1>Your booking with us :</h1>
+	<%= simple_form_for [@garden, @booking] do |f| %>
+	<div id="dates">
+		<p>The date you start renting :</p>
+		<%= f.input_field :start_date, :order => [:day, :month, :year] %>
+		<br>
+	</div>
+	<div class="dates">
+		<p>The date you finish renting :</p>
+		<%= f.input_field :end_date, :order => [:day, :month, :year] %>
+	</div>
+
+	<div id="price">
+		<p>price for the dates you chose : <%= @garden.price%>$</p>
+	</div>
+		<%= f.submit "book",  class: 'bouton' %>
+		<% end %>
+
+</div>
