@@ -7,6 +7,14 @@ class Garden < ApplicationRecord
   validates :description, presence: true
   validates :address, presence: true
   validates :title, presence: true, uniqueness: true
+
+  include PgSearch
+  pg_search_scope :search_by_address_and_square_meters,
+    against: [ :address, :square_meters ],
+    using: {
+      tsearch: { prefix: true }
+    }
+
   #   def gardens
   #     @gardens ||= find_gardens
   #   end

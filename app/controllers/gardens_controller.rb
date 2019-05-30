@@ -6,9 +6,12 @@ class GardensController < ApplicationController
     if params[:search_query].present?
       sql_query = " \
       gardens.address @@ :query \
-      OR gardens.category @@ :query
+      AND gardens.category @@ :query_bis \
       "
-      @gardens = policy_scope(Garden.where(sql_query, query: "%#{params[:search_query]}%").where(category: params[:category]))
+      @gardens = policy_scope(Garden.where(sql_query, query: "%#{params[:search_query]}%", query_bis: "%#{params[:sq_category]}%"))
+      # @filtered_gardens = @gardens.select(category: params[:sq_category])
+      # .where(category: params[:sq_category])
+
     else
       @gardens = policy_scope(Garden)
     end
