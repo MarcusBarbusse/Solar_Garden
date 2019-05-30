@@ -34,6 +34,13 @@
 </div>
  -->
 <h1> Gardens </h1>
+<%= form_tag gardens_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find your garden"
+  %>
+<% end %>
 <div class="cards">
   <% @gardens.each do |garden| %>
     <div class="card-trip">
