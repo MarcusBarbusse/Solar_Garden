@@ -7,17 +7,18 @@
     class: "form-control string required",
     placeholder: "Where"
     %>
-        <select class="form-control string required" name="duration" id="search_query">
-          <option value="">How much sq²</option>
-          <option value="small">Under 100 sq²</option>
-          <option value="medium">Between 100 sq² and 200 sq²</option>
-          <option value="large">Between 200 sq² and 500 sq²</option>
-          <option value="extar large">Over 500 sq²</option>
+
+        <select class="form-control string required" name="category" id="search_query">
+          <option value="">How much m²</option>
+          <option value="small">Under 100 m²</option>
+          <option value="medium">Between 100 m² and 200 m²</option>
+          <option value="large">Between 200 m² and 500 m²</option>
+          <option value="extar large">Over 500 m²</option>
           <option value="">No preference</option>
         </select>
       </div>
       <br>
-      <button class='button'>
+      <button type="submit" class='button'>
         <%= link_to 'Search', gardens_path  %>
       </button>
     </div>
