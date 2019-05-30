@@ -3,7 +3,16 @@ class GardensController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @gardens = policy_scope(Garden)
+    if params[:search_query].present?
+      sql_query = " \
+      gardens.address @@ :query \
+      OR gardens.category @@ :query \
+      OR gardens.title @@ :query \
+      "
+      @gardens = policy_scope(Garden.where(sql_query, query: "%#{params[:search_query]}%"))
+    else
+      @gardens = policy_scope(Garden)
+    end
   end
 
   def new

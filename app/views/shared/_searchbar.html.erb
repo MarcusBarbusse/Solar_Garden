@@ -1,8 +1,12 @@
 <div class="searchbar">
-  <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+  <%= simple_form_for :search, url: gardens_path, method: :get do |f| %>
     <div class="search-form-control form-group">
       <div class="inputs">
-        <input class="form-control string required" type="text" name="place" id="search_query" placeholder="Where?" />
+           <%= text_field_tag :search_query,
+    params[:search_query],
+    class: "form-control string required",
+    placeholder: "Where"
+    %>
         <select class="form-control string required" name="duration" id="search_query">
           <option value="">How much sq²</option>
           <option value="small">Under 100 sq²</option>
@@ -17,5 +21,7 @@
         <%= link_to 'Search', gardens_path  %>
       </button>
     </div>
+
+
   <% end %>
 </div>
