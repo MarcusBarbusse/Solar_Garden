@@ -9,7 +9,7 @@ class Garden < ApplicationRecord
   validates :square_meters, presence: true, numericality: true
   validates :description, presence: true
   validates :address, presence: true
-  validates :title, presence: true, uniqueness: true
+  validates :title, presence: true
   #   def gardens
   #     @gardens ||= find_gardens
   #   end

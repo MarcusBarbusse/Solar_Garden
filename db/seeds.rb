@@ -18,7 +18,7 @@ end
   Garden.create!(
     title: Faker::GreekPhilosophers.name,
     description: Faker::Lorem.paragraphs(1).join,
-    address: Faker::Address.full_address,
+    address: "Cantersteen 10, Brussel",
     square_meters: rand(25..100),
     price: rand(5..50),
     user_id: rand(1..5),
