@@ -1,43 +1,22 @@
+@import "button";
+@import "searchbar";
+
 .banner {
   background-size: cover;
   background-position: center;
   height: 95vh;
   color: #eee;
   text-align: center;
-  padding-top: 40vh;
+  padding-top: 20vh;
   background-image: url("https://www.cleanenergyco.com/blog/wp-content/uploads/2017/11/shutter-stock-solar-array_presentation-wide.jpg");
 }
 
 .banner h1 {
-  margin: 0;
-  color: #21772F;
-  text-shadow: 1px 1px 1px rgb(0,0,0.1);
-  font-size: 40px;
-  font-weight: bold;
-}
-
-.banner p {
-  font-size: 20px;
   color: black;
+  text-shadow: 1px 1px 1px rgb(0,0,0.1);
+  font-family: Helvetica, Sans-Serif;
+  font-size: 30px;
   opacity: .7;
-  // text-shadow: 1px 1px 0.5px rgb(0,0,0.1);
-  margin-bottom: 50px;
+  margin-bottom: 300px;
 }
 
-.banner .button {
-  color: white;
-  padding: 8px 24px;
-  border-radius: 4px;
-  background: #CCB881;
-  text-decoration: none;
-}
-
-.banner .button a {
-  color: white;
-  text-decoration: none;
-}
-
-.banner .button:hover {
-  opacity: 0.8;
-  color: white;
-}
