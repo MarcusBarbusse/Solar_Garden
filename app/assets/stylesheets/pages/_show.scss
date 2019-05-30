@@ -1,9 +1,33 @@
+@import "../components/button";
+
 #showimage {
   width: 600px;
   height: 400px;
   object-fit: cover;
 }
 
-.btn-flat a {
-  color: white;
+#map {
+  background: black;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+
+.garden-card {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.text {
+  justify-content: space-between;
+}
+
+.button {
+  margin-right: 10px;
+}
+
+.buttons {
+  display: flex;
+  margin: 70px auto;
 }
