@@ -12,8 +12,6 @@ gem 'redis'
 gem 'devise'
 gem "pundit"
 gem 'geocoder'
-gem 'searchkick', '~> 3.0'
-
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'sassc-rails'
