@@ -19,7 +19,7 @@ end
     title: Faker::GreekPhilosophers.name,
     description: Faker::Lorem.paragraphs(1).join,
     address: Faker::Address.full_address,
-    square_meters: rand(25..100),
+    square_meters: rand(25..1000),
     price: rand(5..50),
     user_id: rand(1..5),
    )
