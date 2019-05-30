@@ -3,7 +3,16 @@ class GardensController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @gardens = policy_scope(Garden)
+    if params[:search_query].present?
+      sql_query = " \
+      gardens.address @@ :query \
+      OR gardens.category @@ :query \
+      OR gardens.title @@ :query \
+      "
+      @gardens = policy_scope(Garden.where(sql_query, query: "%#{params[:search_query]}%"))
+    else
+      @gardens = policy_scope(Garden)
+    end
   end
 
   def new
@@ -16,8 +25,17 @@ class GardensController < ApplicationController
 
   def create
     @garden = Garden.new(garden_params)
-    @garden.user = current_user  
+    @garden.user = current_user
     authorize @garden
+    if @garden.square_meters < 100
+      @garden.category = "small"
+    elsif @garden.square_meters > 100 && @garden.square_meters < 200
+      @garden.category = "medium"
+    elsif @garden.square_meters > 200 && @garden.square_meters < 500
+      @garden.category = "large"
+    elsif @garden.square_meters > 500
+      @garden.category = "extra large"
+    end
     if @garden.save!
       redirect_to garden_path(@garden)
     else
@@ -25,9 +43,7 @@ class GardensController < ApplicationController
     end
   end
 
-def edit
-  
- end
+  def edit; end
 
   def update
     @garden.update(garden_params)
@@ -45,7 +61,7 @@ def edit
   private
 
   def garden_params
-    params.require(:garden).permit(:title, :description, :address, :square_meters, :price, :photo)
+    params.require(:garden).permit(:title, :description, :address, :square_meters, :price, :photo, :category)
   end
 
   def find_garden
