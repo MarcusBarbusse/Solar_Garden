@@ -1,26 +1,27 @@
-<div class="results">
-  <h3> Some successful projects </h3>
-  <div class="cards">
-    <div class="card" style="background-image:">
-      <p>Beautiful garden in the center of Waterloo, with a great exposition to the sun</p>
-      <div class="avatar">
-        <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
-        <p><small>Sébastien Dupont</small></p>
+<div class="card-trip">
+    <img src="http://www.sahomeowner.co.za/wp-content/uploads/2013/07/August-Garden-22.jpg">
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= garden.title %></h2>
+          <p><%= garden.description %></p>
+          <p><%= garden.square_meters %> square meters</p>
+        </div>
+        <h2 class="card-trip-pricing"><%= garden.price %>€</h2>
       </div>
+          <div class="d-flex justify-content-around align-items-end">
+            <% if policy(garden).edit? %>
+              <button class ="btn">
+                <%= link_to "edit garden", edit_garden_path(garden) %>
+              </button>
+            <% end %>
+              <button class ="btn">
+                <%= link_to "show garden", garden_path(garden)  %>
+              </button>
+            <% if policy(garden).destroy? %>
+              <button class ="btn">
+                <%= link_to "remove garden", garden_path(garden), method: :delete%>
+              </button>
+            <% end %>
+
+          </div>
     </div>
-        <div class="card" style="background-image:">
-      <p>Beautiful garden in the center of Waterloo, with a great exposition to the sun</p>
-      <div class="avatar">
-        <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
-        <p><small>Arthur Lacourt</small></p>
-      </div>
-    </div>
-        <div class="card" style="background-image:">
-      <p>Beautiful garden in the center of Waterloo, with a great exposition to the sun</p>
-      <div class="avatar">
-        <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
-        <p><small>Sébastien Dupont</small></p>
-      </div>
-    </div>
-  </div>
-</div>

@@ -10,17 +10,18 @@
 
 .banner h1 {
   margin: 0;
-  color: #fcf3d9;
-  text-shadow: 1px 1px 3px rgb(0,0,0.3);
+  color: #21772F;
+  text-shadow: 1px 1px 1px rgb(0,0,0.1);
   font-size: 40px;
   font-weight: bold;
 }
 
 .banner p {
   font-size: 20px;
-  color: #fcf3d9;
+  color: black;
   opacity: .7;
-  text-shadow: 1px 1px 3px rgb(0,0,0.3);
+  // text-shadow: 1px 1px 0.5px rgb(0,0,0.1);
+  margin-bottom: 50px;
 }
 
 .banner .button {
@@ -30,7 +31,6 @@
   background: #CCB881;
   text-decoration: none;
 }
-
 
 .banner .button a {
   color: white;
