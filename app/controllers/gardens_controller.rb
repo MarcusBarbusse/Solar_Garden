@@ -23,6 +23,11 @@ class GardensController < ApplicationController
   end
 
   def show
+    @markers =
+      {
+        lat: @garden.latitude,
+        lng: @garden.longitude
+      }
   end
 
   def create
