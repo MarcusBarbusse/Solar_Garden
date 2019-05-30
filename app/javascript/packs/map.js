@@ -1,6 +1,7 @@
 import 'mapbox-gl/dist/mapbox-gl.css';
 import mapboxgl from 'mapbox-gl';
-import { initMapbox } from '../plugins/init_mapbox';
+
+
 
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
@@ -12,7 +13,27 @@ const initMapbox = () => {
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v10'
     });
+
+    // [ ... ]
+    const marker = JSON.parse(mapElement.dataset.markers);
+    console.log(marker)
+
+    // markers.forEach((marker) => {
+      new mapboxgl.Marker()
+        .setLngLat([ marker.lng, marker.lat ])
+        .addTo(map);
+    // });
+      fitMapToMarkers(map, marker);
+
   }
 };
 
+
+
 export { initMapbox };
+
+const fitMapToMarkers = (map, marker) => {
+  const bounds = new mapboxgl.LngLatBounds();
+  bounds.extend([ marker.lng, marker.lat ]);
+  map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
+};
