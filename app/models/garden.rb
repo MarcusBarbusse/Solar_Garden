@@ -1,4 +1,5 @@
 class Garden < ApplicationRecord
+  searchkick
   has_many :bookings
   belongs_to :user
 
