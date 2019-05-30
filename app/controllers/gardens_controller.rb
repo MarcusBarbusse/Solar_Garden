@@ -12,11 +12,16 @@ class GardensController < ApplicationController
   end
 
   def show
+    @markers =
+      {
+        lat: @garden.latitude,
+        lng: @garden.longitude
+      }
   end
 
   def create
     @garden = Garden.new(garden_params)
-    @garden.user = current_user  
+    @garden.user = current_user
     authorize @garden
     if @garden.save!
       redirect_to garden_path(@garden)
@@ -25,9 +30,10 @@ class GardensController < ApplicationController
     end
   end
 
-def edit
-  
- end
+
+  def edit
+
+  end
 
   def update
     @garden.update(garden_params)
