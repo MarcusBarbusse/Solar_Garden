@@ -1,7 +1,12 @@
-<h1><%= @garden.title %></h1>
 
-  <img src="http://www.sahomeowner.co.za/wp-content/uploads/2013/07/August-Garden-22.jpg" id="showimage">
-  <h5><%= @garden.description %></h5>
+  <div class="d-flex justify-content-around">
+    <div>
+      <h2><%= @garden.title %></h2>
+      <h5><%= @garden.description %></h5>
+    </div>
+    <img src="http://www.sahomeowner.co.za/wp-content/uploads/2013/07/August-Garden-22.jpg" id="showimage">
+  </div>
+
 <div class="address">
   <p>Address: <%= @garden.address  %></p>
   <p>Square meters: <%= @garden.square_meters %></p>
@@ -14,3 +19,13 @@
 <button class="btn-flat">
 <%= link_to "all gardens", root_path %>
 </button>
+
+    <div
+    id="map"
+    style="width: 600px;
+    height: 400px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
+
+
