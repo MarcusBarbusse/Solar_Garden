@@ -2,6 +2,7 @@
   <%= simple_form_for :search, url: gardens_path, method: :get do |f| %>
     <div class="search-form-control form-group">
       <div class="inputs">
+
            <%= text_field_tag :search_query,
     params[:search_query],
     class: "form-control string required",
