@@ -1,0 +1,11 @@
+.card-trip {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.card-trip > img {
+  height: 100%;
+  width: 40px;
+  object-fit: cover;
+}
