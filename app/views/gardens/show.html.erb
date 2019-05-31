@@ -1,7 +1,7 @@
 <h1><%= @garden.title %></h1>
 
-  <img src="http://www.sahomeowner.co.za/wp-content/uploads/2013/07/August-Garden-22.jpg" id="showimage">
-  <h5><%= @garden.description %></h5>
+<%= cl_image_tag @garden.photo, height: 300, width: 400, crop: :fill %>
+<h5><%= @garden.description %></h5>
 <div class="address">
   <p>Address: <%= @garden.address  %></p>
   <p>Square meters: <%= @garden.square_meters %></p>
