@@ -20,7 +20,7 @@
         </button>
       </div>
     </div>
-    <%= cl_image_tag @garden.photo, class: "container" %>
+    <%= cl_image_tag @garden.photo, height: 300, width: 400, crop: :fill %>
   </div>
   <div
     id="map"
