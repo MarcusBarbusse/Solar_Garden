@@ -21,16 +21,16 @@
         </div>
         <div class="buttons-row">
           <button class ="button">
-            <%= link_to "see details", garden_path(garden)  %>
+            <%= link_to "See details", garden_path(garden)  %>
           </button>
           <% if policy(garden).edit? %>
           <button class ="button">
-            <%= link_to "edit", edit_garden_path(garden) %>
+            <%= link_to "Edit", edit_garden_path(garden) %>
           </button>
           <% end %>
           <% if policy(garden).destroy? %>
           <button class ="button">
-            <%= link_to "remove", garden_path(garden), method: :delete%>
+            <%= link_to "Remove", garden_path(garden), method: :delete%>
           </button>
           <% end %>
 
