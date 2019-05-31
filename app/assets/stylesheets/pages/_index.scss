@@ -2,9 +2,17 @@
 @import "home";
 @import "new";
 @import "../components/button";
+@import "show";
+
+h1 {
+  color: #217756;
+  font-weight: bold;
+}
 
 .container {
+  margin-top: 20px;
   width: 95%;
+  height: 78vh;
 }
 
 .button {
@@ -42,7 +50,6 @@
   opacity: .7;
   margin: 0;
 }
-
 
 .card-trip .card-trip-infos {
   padding: 16px;
@@ -100,4 +107,3 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
-

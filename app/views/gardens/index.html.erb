@@ -19,18 +19,18 @@
           </div>
           <h2 class="card-trip-pricing"><%= garden.price %>€</h2>
         </div>
-        <div class="d-flex justify-content-around align-items-end">
+        <div class="buttons-row">
+          <button class ="button">
+            <%= link_to "see details", garden_path(garden)  %>
+          </button>
           <% if policy(garden).edit? %>
           <button class ="button">
-            <%= link_to "edit garden", edit_garden_path(garden) %>
+            <%= link_to "edit", edit_garden_path(garden) %>
           </button>
           <% end %>
-          <button class ="button">
-            <%= link_to "show garden", garden_path(garden)  %>
-          </button>
           <% if policy(garden).destroy? %>
           <button class ="button">
-            <%= link_to "remove garden", garden_path(garden), method: :delete%>
+            <%= link_to "remove", garden_path(garden), method: :delete%>
           </button>
           <% end %>
 
