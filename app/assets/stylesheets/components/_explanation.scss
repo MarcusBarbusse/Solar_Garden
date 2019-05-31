@@ -1,0 +1,30 @@
+// .card img {
+//   width: 150px;
+// }
+
+.everything {
+  background: #fffbf2;
+  width: 100%;
+  padding: 50px;
+}
+
+.explanation p {
+  opacity: .5;
+}
+
+.explanation h4 {
+  color: #217756;
+  margin-top: 20px;
+}
+
+.explanation {
+  width: 400px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.explanations {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px auto;
+}
