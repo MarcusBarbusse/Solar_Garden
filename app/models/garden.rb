@@ -9,8 +9,8 @@ class Garden < ApplicationRecord
   validates :square_meters, presence: true, numericality: true
   validates :description, presence: true
   validates :address, presence: true
-
   validates :title, presence: true, uniqueness: true
+  mount_uploader :photo, PhotoUploader
 
   include PgSearch
   pg_search_scope :search_by_address_and_square_meters,
