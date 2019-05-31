@@ -25,12 +25,13 @@
     <div class="cards">
       <% @bookings.each do |booking| %>
         <div class="card-trip">
-        <img src="http://www.sahomeowner.co.za/wp-content/uploads/2013/07/August-Garden-22.jpg">
+        <%= cl_image_tag booking.garden.photo, height: 300, width: 400, crop: :fill %>
           <div class="card-trip-infos">
             <div>
               <h2><%= booking.garden.title %></h2>
               <p><%= booking.garden.description %></p>
               <p><%= booking.garden.square_meters %> square meters</p>
+              <p><b>Booked from <%= booking.start_date %> until <%= booking.end_date %> </b> </p>
             </div>
             <h2 class="card-trip-pricing"><%= booking.garden.price %>€</h2>
           </div>
@@ -48,7 +49,7 @@
     <div class="cards">
       <% @gardens.each do |garden| %>
         <div class="card-trip">
-        <img src="http://www.sahomeowner.co.za/wp-content/uploads/2013/07/August-Garden-22.jpg">
+        <%= cl_image_tag garden.photo, height: 300, width: 400, crop: :fill %>
           <div class="card-trip-infos">
             <div>
               <h2><%= garden.title %></h2>
