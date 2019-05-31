@@ -1,16 +1,31 @@
-<h1><%= @garden.title %></h1>
-
-  <img src="http://www.sahomeowner.co.za/wp-content/uploads/2013/07/August-Garden-22.jpg" id="showimage">
-  <h5><%= @garden.description %></h5>
-<div class="address">
-  <p>Address: <%= @garden.address  %></p>
-  <p>Square meters: <%= @garden.square_meters %></p>
-  <p>Price: <%= @garden.price %> €</p>
+<div class="container">
+  <div class="garden-card">
+    <div class="text">
+      <div class="titles">
+        <h2><%= @garden.title %></h2>
+        <h5><%= @garden.description %></h5>
+      </div>
+      <br><br>
+      <div class="details">
+        <p>Address: <%= @garden.address  %></p>
+        <p>Square meters: <%= @garden.square_meters %></p>
+        <p>Price: <%= @garden.price %> €</p>
+      </div>
+      <div class="buttons">
+        <button class="button">
+          <%= link_to "Book now", new_garden_booking_path(@garden)  %>
+        </button>
+        <button class="button">
+          <%= link_to "all gardens", gardens_path %>
+        </button>
+      </div>
+    </div>
+    <%= cl_image_tag @garden.photo, height: 300, width: 400, crop: :fill %>
+  </div>
+  <div
+    id="map"
+    style="width: 100%;
+    height: 400px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>
-
-<button class="btn-flat">
-<%= link_to "Book now", new_garden_booking_path(@garden)  %>
-</button>
-<button class="btn-flat">
-<%= link_to "all gardens", root_path %>
-</button>

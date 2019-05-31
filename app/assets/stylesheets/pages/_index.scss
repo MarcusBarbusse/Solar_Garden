@@ -1,6 +1,23 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "new";
+@import "../components/button";
+
+.container {
+  width: 95%;
+}
+
+.button {
+  font-size: 12px;
+}
+
+.buttons-row {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
 
 .card-trip {
   overflow: hidden;
