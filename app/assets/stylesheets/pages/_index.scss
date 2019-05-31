@@ -12,6 +12,12 @@ h1 {
   color: #217756;
   font-weight: bold;
 }
+.flex-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between
+}
 
 .container {
   margin-top: 20px;
@@ -34,6 +40,9 @@ h1 {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card-trip > img {
@@ -75,6 +84,8 @@ h1 {
   grid-gap: 16px;
   margin: 15px;
 }
+
+
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {

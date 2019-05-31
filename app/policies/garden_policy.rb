@@ -12,13 +12,17 @@ class GardenPolicy < ApplicationPolicy
   def show?
     true
   end
-  
+
   def update?
     is_owner_or_admin?
   end
 
   def destroy?
     is_owner_or_admin?
+  end
+
+  def account?
+    true
   end
 
   private
