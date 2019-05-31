@@ -9,7 +9,7 @@
 <div class="cards">
   <% @gardens.each do |garden| %>
     <div class="card-trip">
-    <img src="http://www.sahomeowner.co.za/wp-content/uploads/2013/07/August-Garden-22.jpg">
+      <%= cl_image_tag garden.photo, height: 300, width: 400, crop: :fill %>
       <div class="card-trip-infos">
         <div>
           <h2><%= garden.title %></h2>

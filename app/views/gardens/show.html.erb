@@ -1,5 +1,4 @@
 <div class="container">
-
   <div class="garden-card">
     <div class="text">
       <div class="titles">
@@ -21,14 +20,12 @@
         </button>
       </div>
     </div>
-    <img src="http://www.sahomeowner.co.za/wp-content/uploads/2013/07/August-Garden-22.jpg" id="showimage">
+    <%= cl_image_tag @garden.photo, height: 300, width: 400, crop: :fill %>
   </div>
-
   <div
     id="map"
     style="width: 100%;
     height: 400px;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-
 </div>
