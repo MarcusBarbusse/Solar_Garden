@@ -3,7 +3,6 @@
 .search-form-control {
   position: relative;
   padding-bottom: 80px;
-  opacity: 0.9;
   width: 20%;
   margin: auto;
   border-radius: 4px;
@@ -31,6 +30,7 @@
 .inputs {
   display: flex;
   flex-direction: row;
+  opacity: 0.9;
 }
 
 // .button {
