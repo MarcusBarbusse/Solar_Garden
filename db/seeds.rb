@@ -16,7 +16,7 @@ end
 
 20.times do
   Garden.create!(
-    title: Faker::GreekPhilosophers.name,
+    title: Faker::Beer.name,
     description: Faker::Lorem.paragraphs(1).join,
     address: "Cantersteen 10, Brussel",
     square_meters: rand(25..1000),

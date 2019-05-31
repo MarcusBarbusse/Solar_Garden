@@ -1,0 +1,90 @@
+
+<!--
+<% if @company == true %>
+
+  <h2>Your bookings</h2>
+
+<% @gardens.each do |garden| %>
+  <%= garden.title %>
+  <%= garden.user_id %>
+<% end %>
+  <br>
+
+  <% else %>
+  <h2>Your gardens</h2>
+  <% @gardens.each do |garden| %>
+    <%= garden.title %>
+    <%= garden.user_id %>
+  <% end %>
+<% end %>
+ -->
+
+<div class=container>
+  <% if @company == true %>
+    <h1>Your bookings</h1>
+    <div class="cards">
+      <% @bookings.each do |booking| %>
+        <div class="card-trip">
+        <%= cl_image_tag booking.garden.photo, height: 300, width: 400, crop: :fill %>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= booking.garden.title %></h2>
+              <p><%= booking.garden.description %></p>
+              <p><%= booking.garden.square_meters %> square meters</p>
+              <p><b>Booked from <%= booking.start_date %> until <%= booking.end_date %> </b> </p>
+            </div>
+            <h2 class="card-trip-pricing"><%= booking.garden.price %>€</h2>
+          </div>
+
+
+              <div class="buttons-row">
+                <button class ="button">
+                    <%= link_to "show garden", garden_path(booking.garden)  %>
+                  </button>
+              </div>
+        </div>
+      <% end %>
+  <% else %>
+    <h1>Your Gardens </h1>
+    <div class="cards">
+      <% @gardens.each do |garden| %>
+        <div class="card-trip">
+        <%= cl_image_tag garden.photo, height: 300, width: 400, crop: :fill %>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= garden.title %></h2>
+              <p><%= garden.description %></p>
+              <p><%= garden.square_meters %> square meters</p>
+              <% if @bookings.where(garden_id: garden) == [] %>
+                <p><b>Currently no bookings</b></p>
+              <% else %>
+                <p><b>Booked from <%= @bookings.where(garden_id: garden).last.start_date %> until <%= @bookings.where(garden_id: garden).last.end_date %> </b> </p>
+              <% end %>
+
+            </div>
+
+
+
+            <h2 class="card-trip-pricing"><%= garden.price %>€</h2>
+          </div>
+
+              <div class="buttons-row">
+                <button class ="button">
+                    <%= link_to "show garden", garden_path(garden)  %>
+                  </button>
+                <% if policy(garden).edit? %>
+                  <button class ="button">
+                    <%= link_to "edit garden", edit_garden_path(garden) %>
+                  </button>
+                <% end %>
+                <% if policy(garden).destroy? %>
+                  <button class ="button">
+                    <%= link_to "remove garden", garden_path(garden), method: :delete%>
+                  </button>
+                <% end %>
+
+              </div>
+        </div>
+      <% end %>
+  <% end %>
+</div>
