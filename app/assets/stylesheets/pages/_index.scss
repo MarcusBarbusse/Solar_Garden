@@ -8,11 +8,11 @@ h1 {
   color: #217756;
   font-weight: bold;
 }
-.container-wrap {
+.flex-wrapper {
   display: flex;
+  min-height: 100vh;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
+  justify-content: space-between
 }
 
 .container {
