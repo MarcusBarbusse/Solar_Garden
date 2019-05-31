@@ -3,13 +3,18 @@ class DashboardsController < ApplicationController
 
   def account
     @gardens = Garden.where(user_id: current_user)
-    byebug
     if @gardens == []
+      @gardens = []
+      @bookings = []
       current_user.bookings.each do |booking|
         @gardens << booking.garden
+        @bookings << booking
       end
+      @company = true
       authorize @gardens
     else
+      @company = false
+      @bookings = Booking.all
       authorize @gardens
     end
   end
