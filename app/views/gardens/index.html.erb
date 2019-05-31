@@ -1,39 +1,41 @@
-<h1> Gardens </h1>
-<%= form_tag gardens_path, method: :get do %>
+<div class="container">
+  <h1> Gardens </h1>
+  <%= form_tag gardens_path, method: :get do %>
   <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
+  params[:query],
+  class: "form-control",
     placeholder: "Find your garden"
-  %>
-<% end %>
-<div class="cards">
-  <% @gardens.each do |garden| %>
-    <div class="card-trip">
-      <%= cl_image_tag garden.photo, height: 300, width: 400, crop: :fill %>
-      <div class="card-trip-infos">
-        <div>
-          <h2><%= garden.title %></h2>
-          <p><%= garden.description %></p>
-          <p><%= garden.square_meters %> square meters</p>
-        </div>
-        <h2 class="card-trip-pricing"><%= garden.price %>€</h2>
-      </div>
-          <div class="d-flex justify-content-around align-items-end">
-            <% if policy(garden).edit? %>
-              <button class ="btn">
-                <%= link_to "edit garden", edit_garden_path(garden) %>
-              </button>
-            <% end %>
-              <button class ="btn">
-                <%= link_to "show garden", garden_path(garden)  %>
-              </button>
-            <% if policy(garden).destroy? %>
-              <button class ="btn">
-                <%= link_to "remove garden", garden_path(garden), method: :delete%>
-              </button>
-            <% end %>
-
+    %>
+    <% end %>
+    <div class="cards">
+      <% @gardens.each do |garden| %>
+      <div class="card-trip">
+        <%= cl_image_tag garden.photo %>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= garden.title %></h2>
+            <p><%= garden.description %></p>
+            <p><%= garden.square_meters %> square meters</p>
           </div>
+          <h2 class="card-trip-pricing"><%= garden.price %>€</h2>
+        </div>
+        <div class="buttons-row">
+          <button class ="button">
+            <%= link_to "see details", garden_path(garden)  %>
+          </button>
+          <% if policy(garden).edit? %>
+          <button class ="button">
+            <%= link_to "edit", edit_garden_path(garden) %>
+          </button>
+          <% end %>
+          <% if policy(garden).destroy? %>
+          <button class ="button">
+            <%= link_to "remove", garden_path(garden), method: :delete%>
+          </button>
+          <% end %>
+
+        </div>
+      </div>
+      <% end %>
     </div>
-  <% end %>
 </div>

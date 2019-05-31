@@ -14,9 +14,9 @@ class Garden < ApplicationRecord
 
   include PgSearch
   pg_search_scope :search_by_address_and_square_meters,
-    against: [ :address, :square_meters ],
-    using: {
-      tsearch: { prefix: true }
+  against: [:address, :square_meters],
+  using: {
+  tsearch: { prefix: true }
     }
 
 end

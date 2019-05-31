@@ -1,16 +1,17 @@
 .button {
   padding: 8px 24px;
   border-radius: 4px;
-  background: #CCB881;
+  background: #217756;
   transition: background 0.3s ease;
+  color: white !important;
 }
 
 .button a {
-  color: white;
+  color: white !important;
   text-decoration: none;
 }
 
 .button:hover {
-  background: #CCB881;
+  background: #154f38;
   color: white;
 }

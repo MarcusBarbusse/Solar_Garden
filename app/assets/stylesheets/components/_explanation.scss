@@ -1,11 +1,12 @@
-// .card img {
-//   width: 150px;
-// }
+.img {
+  // width: 10px;
+  height: 70px;
+}
 
 .everything {
-  background: #fffbf2;
+  background: white;
   width: 100%;
-  padding: 50px;
+  padding: 45px;
 }
 
 .explanation p {
@@ -21,6 +22,8 @@
   width: 400px;
   border-radius: 3px;
   text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .explanations {
