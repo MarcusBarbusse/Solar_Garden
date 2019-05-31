@@ -3,7 +3,6 @@
 .search-form-control {
   position: relative;
   padding-bottom: 80px;
-  opacity: 0.9;
   width: 20%;
   margin: auto;
   border-radius: 4px;
@@ -18,6 +17,8 @@
 
 .search-form-control .form-control {
   height: 3.5rem;
+  width: 500px;
+  height: 35px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   border: 1px solid #E7E7E7;
 }
@@ -31,6 +32,7 @@
 .inputs {
   display: flex;
   flex-direction: row;
+  opacity: 0.9;
 }
 
 // .button {
