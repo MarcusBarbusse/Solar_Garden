@@ -9,6 +9,13 @@
   padding: 45px;
 }
 
+.everything h1 {
+  text-align: center;
+  font-family: 'Mukta', sans-serif;
+  font-size: 35px;
+  padding: 10px;
+}
+
 .explanation p {
   opacity: .5;
 }
@@ -30,4 +37,5 @@
   display: flex;
   justify-content: space-between;
   margin: 0px auto;
+  padding: 10px;
 }
