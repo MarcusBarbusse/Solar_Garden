@@ -1,11 +1,27 @@
-<%= simple_form_for :search, url: root_path, method: :get do |f| %>
-  <div class="search-form-control form-group">
-    <div class="inputs">
-    <input class="form-control string required" type="text" name="place" id="search_query" placeholder="Where?" />
-    <input class="form-control string required" type="text" name="duration" id="search_query" placeholder="How many square meters?" />
-    <button class='button'>
-      <%= link_to 'Search', gardens_path  %>
-    </button>
-  </div>
-  </div>
-<% end %>
+<div class="searchbar">
+  <%= simple_form_for :search, url: gardens_path, method: :get do |f| %>
+    <div class="search-form-control form-group">
+      <div class="inputs">
+        <%= text_field_tag :search_query,
+          params[:search_query],
+          class: "form-control string required",
+          placeholder: "Where"
+        %>
+        <select class="form-control string required" name="sq_category" id="search_query">
+          <option value="">How many m²</option>
+          <option value="small">Under 100 m²</option>
+          <option value="medium">Between 100 m² and 200 m²</option>
+          <option value="large">Between 200 m² and 500 m²</option>
+          <option value="extra large">Over 500 m²</option>
+          <option value="">No preference</option>
+        </select>
+      </div>
+      <br>
+      <button class='button'>
+        <%= link_to 'Search', gardens_path  %>
+      </button>
+    </div>
+
+
+  <% end %>
+</div>

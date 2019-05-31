@@ -1,13 +1,11 @@
 <div class="banner">
-  <div class="container">
-    <h1>Solar Garden</h1>
-    <p>Host your garden, be part of the energy transition</p>
-    <button class='button'>
-      <%= link_to 'Add your garden', new_garden_path %>
-    </button>
+  <div class="banner-items">
+<!--     <h1>Solar Garden</h1> -->
+    <h1>Find a garden to install your solar panels and contribute to the renewable transition</h1>
+    <div class="searchbar">
+      <%= render "shared/searchbar" %>
+    </div>
   </div>
 </div>
 
-<%= render "shared/searchbar" %>
 <%= render "shared/explanation" %>
-eeeeee
