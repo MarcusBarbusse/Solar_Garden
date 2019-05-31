@@ -7,6 +7,7 @@ class Garden < ApplicationRecord
   validates :description, presence: true
   validates :address, presence: true
   validates :title, presence: true, uniqueness: true
+    mount_uploader :photo, PhotoUploader
   #   def gardens
   #     @gardens ||= find_gardens
   #   end
