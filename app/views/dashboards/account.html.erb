@@ -54,7 +54,12 @@
               <h2><%= garden.title %></h2>
               <p><%= garden.description %></p>
               <p><%= garden.square_meters %> square meters</p>
-              <p><b>Booked from <%= @bookings.where(garden_id: garden).last.start_date %> until <%= @bookings.where(garden_id: garden).last.end_date %> </b> </p>
+              <% if @bookings.where(garden_id: garden) == [] %>
+                <p><b>Currently no bookings</b></p>
+              <% else %>
+                <p><b>Booked from <%= @bookings.where(garden_id: garden).last.start_date %> until <%= @bookings.where(garden_id: garden).last.end_date %> </b> </p>
+              <% end %>
+
             </div>
 
 
